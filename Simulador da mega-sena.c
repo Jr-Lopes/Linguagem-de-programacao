@@ -44,7 +44,7 @@ int main(){
     //Loop principal
     
     int tentativas = 0, cont = 0;
-    int n, num_sorteados[6];
+    int num_sorteados[6];
     srand(time(NULL)); // Gera 6 números aleatórios não repetidos para o sorteio
     while (true){
         tentativas +=1;
@@ -53,34 +53,38 @@ int main(){
         }
 
         // Gera números aleátorios
-        for (i = 0; i < 6; i++){
-            n = rand() % 60 + 1;  
-            for(j = 0; j <= 6; j++){
-                if(num_sorteados[j] == n){ // Verifica se o número gerado é repetido, comparando com cada número dentro da lista 
-                   break; 
-                } 
-                else if (num_sorteados[j] != n && j == 5){ // se o número gerado for diferente 
-                    num_sorteados[i] = n;
+        for (int i = 0; i < 6; ){
+            num_sorteados[i] = 1 + rand() % 60;
+
+            int igual = 0;
+            for(j = 0; j < i; j++){
+                if(num_sorteados[j] == num_sorteados[i]){
+                    igual = 1;
+                    break;
                 }
             }
+
+            if(igual == 0){
+                i++;
             }
+        }
+        
         for(i = 0; i < 6; i++){
             for(j = 0; j < 6; j++){
                 if (numerosEscolhidos[i] == num_sorteados[j]){ // compara as listas 
                 cont ++;
+                break;
                 }
             }
         }
         
         if (cont == 6){ // Quando a lista possui 6 números o loop para 
-            break;
-        }
-        else{
-            cont = 0;
-        }
-        }
         printf("\nO numero sorteado foi: ");
-    imprime(num_sorteados, 6);
-    printf("\n Numero de tentivas %d", tentativas);
+        imprime(num_sorteados, 6);
+        printf("\n Numero de tentivas %d", tentativas);
+        break;
+        }     
+    }
     return 0;
+
     }
