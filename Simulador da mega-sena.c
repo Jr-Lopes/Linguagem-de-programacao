@@ -48,8 +48,9 @@ int main(){
     srand(time(NULL)); // Gera 6 números aleatórios não repetidos para o sorteio
     while (true){
         tentativas +=1;
+        cont = 0;
         if (tentativas % 1000000 == 0) {
-            printf(" %d\n", tentativas);
+           printf(" %d\n", tentativas);
         }
 
         // Gera números aleátorios
@@ -68,6 +69,7 @@ int main(){
                 i++;
             }
         }
+        
         
         for(i = 0; i < 6; i++){
             for(j = 0; j < 6; j++){
