@@ -1,2 +1,2 @@
 # Linguagem de programacao
-Atividades
+Atividades e exemplos
