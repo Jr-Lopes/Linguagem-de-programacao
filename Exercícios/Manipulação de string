@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+
+int main()
+{
+    char nome[50];
+    char sobre_nome[50];
+    char nome_completo[100];
+    
+    printf("Digite seu nome: ");
+    gets(nome);
+    printf("Digite seu sobre nome: ");
+    gets(sobre_nome);
+    
+    strcpy(nome_completo, nome); //strcpy serve para copiar string de um local de memoria para outro
+    strcat(nome_completo, " "); //strcat serve para juntar duas strings 
+    strcat(nome_completo, sobre_nome);
+    
+    printf("Seu nome completo é: %s\n", nome_completo);
+    
+    for(int i = 0; i < 50)
+
+    return 0;
+}
