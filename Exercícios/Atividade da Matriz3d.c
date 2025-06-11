@@ -2,7 +2,7 @@
 #include <time.h>
 
 int main() {
-    int x = 2, y = 2, z = 2;
+    int x = 5, y = 5, z = 5;
     int vetor[x][y][z];
     int tamanho = sizeof(vetor);
 
